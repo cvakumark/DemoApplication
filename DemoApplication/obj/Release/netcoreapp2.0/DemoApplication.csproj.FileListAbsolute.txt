@@ -1,0 +1,11 @@
+C:\Users\KalvaSivaKumar\source\repos\DemoApplication\DemoApplication\bin\Release\netcoreapp2.0\DemoApplication.deps.json
+C:\Users\KalvaSivaKumar\source\repos\DemoApplication\DemoApplication\bin\Release\netcoreapp2.0\DemoApplication.runtimeconfig.json
+C:\Users\KalvaSivaKumar\source\repos\DemoApplication\DemoApplication\bin\Release\netcoreapp2.0\DemoApplication.runtimeconfig.dev.json
+C:\Users\KalvaSivaKumar\source\repos\DemoApplication\DemoApplication\bin\Release\netcoreapp2.0\DemoApplication.dll
+C:\Users\KalvaSivaKumar\source\repos\DemoApplication\DemoApplication\bin\Release\netcoreapp2.0\DemoApplication.pdb
+C:\Users\KalvaSivaKumar\source\repos\DemoApplication\DemoApplication\obj\Release\netcoreapp2.0\DemoApplication.csprojAssemblyReference.cache
+C:\Users\KalvaSivaKumar\source\repos\DemoApplication\DemoApplication\obj\Release\netcoreapp2.0\DemoApplication.csproj.CoreCompileInputs.cache
+C:\Users\KalvaSivaKumar\source\repos\DemoApplication\DemoApplication\obj\Release\netcoreapp2.0\DemoApplication.AssemblyInfoInputs.cache
+C:\Users\KalvaSivaKumar\source\repos\DemoApplication\DemoApplication\obj\Release\netcoreapp2.0\DemoApplication.AssemblyInfo.cs
+C:\Users\KalvaSivaKumar\source\repos\DemoApplication\DemoApplication\obj\Release\netcoreapp2.0\DemoApplication.dll
+C:\Users\KalvaSivaKumar\source\repos\DemoApplication\DemoApplication\obj\Release\netcoreapp2.0\DemoApplication.pdb
