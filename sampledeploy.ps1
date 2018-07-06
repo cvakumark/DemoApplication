@@ -9,7 +9,7 @@ if(Test-Path -Path "C:\TempDIr") {
 New-Item -ItemType directory -Path "C:\TempDIr"
 
 
-function upload_download($version)
+function downloadArtifact($version)
 {
 $AF_USER = "admin"  
 $AF_PWD = ConvertTo-SecureString "admin123" -AsPlainText -Force  
@@ -19,7 +19,7 @@ $URI = New-Object System.Uri("http://localhost:8081/artifactory/DemoApplication/
 
 Invoke-RestMethod -Method GET -Uri $URI -OutFile "C:\TempDir\DemoApplication_$version.zip" -Credential $CREDS -UseBasicParsing
 }
-upload_download -version "$version1"
+downloadArtifact -version "$version1"
 
 function UnZipMe($zipfilename, $destination)
 {
@@ -76,4 +76,4 @@ if($site -eq $null)
  New-WebApplication -Site $name -Name $name -PhysicalPath "C:\inetpub\wwwroot\Admin" -ApplicationPool $name
 }
  
-UnZipMe -zipfilename "C:\TempDIr\DemoApplication_71.zip" -destination "C:\inetpub\wwwroot\Admin"
+UnZipMe -zipfilename "C:\TempDIr\DemoApplication_$version.zip" -destination "C:\inetpub\wwwroot\Admin"
