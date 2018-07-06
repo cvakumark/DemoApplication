@@ -3,8 +3,8 @@ param (
         
     )
 # Delete Existing zip files
-if(Test-Path -Path "C:\TempDIr") {
-	Remove-Item "C:\TempDIr" -Force
+if(Test-Path -Path "C:\TempDIr\") {
+    Remove-Item "C:\TempDIr\" -Force
 }
 New-Item -ItemType directory -Path "C:\TempDIr"
 
@@ -76,4 +76,4 @@ if($site -eq $null)
  New-WebApplication -Site $name -Name $name -PhysicalPath "C:\inetpub\wwwroot\Admin" -ApplicationPool $name
 }
  
-UnZipMe -zipfilename "C:\TempDIr\DemoApplication_$version.zip" -destination "C:\inetpub\wwwroot\Admin"
+UnZipMe -zipfilename "C:\TempDIr\DemoApplication_16.zip" -destination "C:\inetpub\wwwroot\Admin"
