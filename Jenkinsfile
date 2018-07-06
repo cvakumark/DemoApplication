@@ -9,6 +9,7 @@ node {
     
     stage ('Build for Error Checks') {
         bat 'dotnet build'
+		
     }
     
     stage ('Publish Binaries') {
@@ -18,7 +19,7 @@ node {
         zip dir: 'DemoApplication/bin/output', glob: '', zipFile: "${env.WORKSPACE}/DemoApplication.${env.BUILD_ID}.zip"
 	}
 	stage ('Upload Artifacts') {
-        powershell returnStatus: true, script: '.\\UploadArtifact.ps1'
+        powershell returnStatus: true, script: ".\\UploadArtifact.ps1 -version ${env.BUILD_ID} -workspace ${env.WORKSPACE}
 	}
 		
  }
