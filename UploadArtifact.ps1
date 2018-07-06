@@ -1,13 +1,13 @@
 param(
 [string] $version=52
-[string] $workspace
+[string] $WORKSPACE
 )
 
 # uploade package from artifactory
 function UploadArtifacts($version, $workspace) {
 #cd $env:workspace
 $URI = New-Object System.Uri("http://localhost:8081/artifactory/DemoApplication/DemoApplication_$version.zip")  
-$SOURCE = "$workspace"
+$SOURCE = "$WORKSPACE"
 DemoApplication_$version.zip"
 $AF_USER = "admin"  
 $AF_PWD = ConvertTo-SecureString "admin123" -AsPlainText -Force  
@@ -17,4 +17,4 @@ Invoke-WebRequest -Uri $URI -InFile $SOURCE -Method Put -Credential $CREDS -UseB
 
 }
 
-UploadArtifacts  -version "$version" -workspace "$wokrspace"
+UploadArtifacts  -version "$version" -WORKSPACE "$WORKSPACE"
