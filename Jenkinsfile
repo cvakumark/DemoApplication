@@ -4,18 +4,18 @@ node {
     }
     
     stage ('Restore Dependecies') {
-        cmd 'dotnet restore'
+        bat 'dotnet restore'
     }
     
     stage ('Build for Error Checks') {
-        cmd 'dotnet dotnet build'
+        bat 'dotnet dotnet build'
     }
     
     stage ('Publish Binaries') {
-        cmd 'dotnet publish -c out'
+        bat 'dotnet publish -c out'
     }
     
     stage ('UploadtoArtifactory') {
-        cmd "docker image build -t kjanshair/aspnetcore-example:${env.BUILD_NUMBER} ."    
+        bat "docker image build -t kjanshair/aspnetcore-example:${env.BUILD_NUMBER} ."    
     }
 }
