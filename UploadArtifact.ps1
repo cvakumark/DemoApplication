@@ -1,10 +1,9 @@
 param(
-[string] $version
+[string] $version=30
 )
 
 # uploade package from artifactory
-function artifact_download($version)
-{
+function UploadArtifacts($version) {
 #cd $env:workspace
 $URI = New-Object System.Uri("http://localhost:8081/artifactory/Assignment/DemoApplication_$version.zip")  
 #$SOURCE = "./DemoApplication/bin/Debug/netcoreapp2.0/publish/DemoApplication_$version.zip"
@@ -16,4 +15,4 @@ Invoke-WebRequest -Uri $URI -InFile $SOURCE -Method Put -Credential $CREDS -UseB
 
 }
 
-artifact_download  -version "$version"
+UploadArtifacts  -version "$version"
