@@ -16,7 +16,7 @@ node {
     }
     stage ('upload to Artifactory') {
         zip dir: 'DemoApplication/bin/output', glob: '', zipFile: "${env.WORKSPACE}/DemoApplication.${env.BUILD_ID}.zip"
-		powershell " function UploadArtifact($version)
+		powershell "function UploadArtifact($version)
 		{
 		#cd $env:workspace
 		$URI = New-Object System.Uri("http://localhost:8081/artifactory/Assignment/DemoApplication_$version.zip")  
