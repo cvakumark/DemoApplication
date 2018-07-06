@@ -1,5 +1,5 @@
 param (
-        [string]$version1 = $(throw "-version1 is required"),
+        [string]$version1 = $(throw "-version1 is required")
         
     )
 # Delete Existing zip files
