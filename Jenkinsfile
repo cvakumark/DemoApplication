@@ -12,7 +12,7 @@ node {
     }
     
     stage ('Publish Binaries') {
-        bat 'dotnet publish --configuration Release --no-build --output bin/output'
+        bat 'dotnet publish --configuration Release --output bin/output'
     }
     
  }
