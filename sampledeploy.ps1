@@ -4,7 +4,9 @@ param (
     )
 # Delete Existing zip files
 if(Test-Path -Path "C:\TempDIr\") {
-    Remove-Item "C:\TempDIr\" -Force
+  Get-ChildItem -Path $directory -Force -Recurse |
+  Sort-Object -Property FullName -Descending |
+  Remove-Item -Recurse -Force
 }
 New-Item -ItemType directory -Path "C:\TempDIr"
 
