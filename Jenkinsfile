@@ -16,7 +16,7 @@ node {
     }
     stage ('upload to Artifactory') {
         withEnv(['7ZIP_HOME=C:\\\\Program Files (x86)\\\\Caphyon\\\\Advanced Installer 15.0\\\\third-party\\\\7zip']) {
-		bat '$7ZIP_HOME/7z.exe a Demoapplication_%BUILD_ID%.zip bin/output/*'  
+		bat '${7ZIP_HOME}/7z.exe a Demoapplication_%BUILD_ID%.zip bin/output/*'  
 	}
 	
 
