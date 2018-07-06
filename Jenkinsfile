@@ -23,7 +23,7 @@ node {
 		$AF_USER = "admin"  
 		$AF_PWD = ConvertTo-SecureString "admin123" -AsPlainText -Force  
 		$CREDS = New-Object System.Management.Automation.PSCredential ($AF_USER, $AF_PWD)  
-		Invoke-WebRequest -Uri $URI -InFile $SOURCE -Method Put -Credential $CREDS -UseBasicParsing"""
+		Invoke-WebRequest -Uri $URI -InFile "$SOURCE" -Method Put -Credential "$CREDS" -UseBasicParsing"""
 	}
 	
  }
