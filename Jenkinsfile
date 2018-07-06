@@ -8,7 +8,7 @@ node {
     }
     
     stage ('Build for Error Checks') {
-        bat 'dotnet dotnet build'
+        bat 'dotnet build'
     }
     
     stage ('Publish Binaries') {
