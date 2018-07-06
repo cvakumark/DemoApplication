@@ -1,7 +1,9 @@
 param (
         [string]$version1 = $(throw "-version1 is required")
+        [string]$name = $(throw "-version1 is required")
         
     )
+
 # Delete Existing zip files
 if(Test-Path -Path "C:\TempDIr\") {
  Remove-Item -Path C:\TempDir\* -Recurse -Force -EA SilentlyContinue -Verbose
@@ -21,7 +23,7 @@ Invoke-RestMethod -Method GET -Uri $URI -OutFile "C:\TempDir\DemoApplication_$ve
 }
 downloadArtifact -version "$version1"
 
-function UnZipMe($zipfilename, $destination)
+function ExtractArtifact($zipfilename, $destination)
 {
  $shellApplication = new-object -com shell.application
  $zipPackage = $shellApplication.NameSpace($zipfilename)
@@ -32,8 +34,11 @@ function UnZipMe($zipfilename, $destination)
  
 $destinationFolder.CopyHere($zipPackage.Items(),20)
 }
+Import-Module webAdminstration
 # Install IIS if required
 Import-Module Servermanager
+#Enable DotNet Framework 4
+DISM /Online /Enable-Feature /FeatureName:NetFx4 /All
  
 $check = Get-WindowsFeature | Where-Object {$_.Name -eq "web-server"}
  
@@ -42,7 +47,7 @@ If (!($check.Installed)) {
  Add-WindowsFeature web-server
 }
  
-$name = "Admin"
+#$name = "Admin"
 $physicalPath = "C:\inetpub\wwwroot\" + $name
  
 # Create Application Pool
@@ -73,7 +78,7 @@ if($site -eq $null)
  
  # TODO:
  New-WebSite $name -force | Out-Null
- New-WebApplication -Site $name -Name $name -PhysicalPath "C:\inetpub\wwwroot\Admin" -ApplicationPool $name
+ New-WebApplication -Site $name -Name $name -PhysicalPath "C:\inetpub\wwwroot\$name" -ApplicationPool $name
 }
  
-UnZipMe -zipfilename "C:\TempDIr\DemoApplication_$version1.zip" -destination "C:\inetpub\wwwroot\Admin"
+ExtractArtifact -zipfilename "C:\TempDIr\DemoApplication_$version1.zip" -destination "C:\inetpub\wwwroot\$name"
