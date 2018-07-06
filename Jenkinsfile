@@ -21,5 +21,8 @@ node {
 	stage ('Upload Artifacts') {
 		powershell returnStatus: true, script: """.\\UploadArtifact.ps1 -version ${env.BUILD_ID}"""
 	}
+	stage ('DeployToDev') {
+		powershell returnStatus: true, script: """.\\sampledeploy.ps1 -version ${env.BUILD_ID}"""
+	}
 		
  }
