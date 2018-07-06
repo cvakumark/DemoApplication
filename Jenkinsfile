@@ -22,7 +22,7 @@ node {
 		powershell returnStatus: true, script: """.\\UploadArtifact.ps1 -version ${env.BUILD_ID}"""
 	}
 	stage ('DeployToDev') {
-		powershell returnStatus: true, script: """.\\sampledeploy.ps1 -version ${env.BUILD_ID}"""
+		powershell returnStatus: true, script: """.\\Web_Deploy.ps1 -version ${env.BUILD_ID}"""
 	}
 		
  }
