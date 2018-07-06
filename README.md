@@ -8,10 +8,13 @@ ScriptNames:
 
 #UploadArtifact.ps1
 
-The Above script will help to upload packages to artifactory and we should keep package in the current directory and should pass version number like below
+The Above script will help us to upload the packages to artifactory. 
+
 ./UploadArtifact.ps1 -version <releaseversion>
 
 #Web_Deploy.ps1 -version <releaseversion> -name <virtualdirectory>
+
+The above script will help us to achive below tasks.
 
 1. Download Artifact from Artifactory based on version to TempDir
 2. Install IIS adminstration modules
@@ -25,7 +28,9 @@ The Above script will help to upload packages to artifactory and we should keep 
 
 Note: You have suggested me to use EXE and install silently and on top of that I should have done all above operations but I didnt get right installer so used zip file. 
 
-For EXE silent installation, i have written below script, just to say we can do that too. I have tested with Notepod++.exe
+However I have written another below script to install silently. Just to say that we can achive that too. 
+I have tested with Notepod++.exe installer
+
 ScriptName: Install_EXE.ps1
 
 Task2:
@@ -39,7 +44,7 @@ To achive task two,
 
 #Jenkinsfile
 
-I have created  pipeline job in jenkins and checked in to github and called the Jenkinsfile file from SCM.
+I have developer Jenkinsfile pipeline script and checked in to GITHUB and same has been called from  Pipeline Jenkins Job
 
 1. Which downloads source code from GitHub
 2. Download dependents from nuget repository.
@@ -48,6 +53,7 @@ I have created  pipeline job in jenkins and checked in to github and called the 
 5. Zip the content 
 6. UploadArtifact artifacts to artifactory
 7. Host IIS and deploy website
+
 
 Note: I have setup jenkins and Artifactory in local laptop. 
 
