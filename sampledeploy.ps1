@@ -19,7 +19,7 @@ $AF_USER = "admin"
 $AF_PWD = ConvertTo-SecureString "admin123" -AsPlainText -Force  
 $CREDS = New-Object System.Management.Automation.PSCredential ($AF_USER, $AF_PWD) 
 
-$URI = New-Object System.Uri("http://localhost:8081/artifactory/Assignment/DemoApplication_$version.zip")  
+$URI = New-Object System.Uri("http://localhost:8081/artifactory/DemoApplication/DemoApplication_$version.zip")  
 
 Invoke-RestMethod -Method GET -Uri $URI -OutFile "C:\TempDir\DemoApplication_$version.zip" -Credential $CREDS -UseBasicParsing
 }
