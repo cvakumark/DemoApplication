@@ -12,10 +12,7 @@ node {
     }
     
     stage ('Publish Binaries') {
-        bat 'dotnet publish -c out'
+        bat 'dotnet publish --configuration Release --no-build --output bin/output'
     }
     
-    stage ('UploadtoArtifactory') {
-        bat "docker image build -t kjanshair/aspnetcore-example:${env.BUILD_NUMBER} ."    
-    }
-}
+ }
