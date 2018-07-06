@@ -2,11 +2,16 @@ param (
         [string]$version1 = $(throw "-version1 is required")
         
     )
+Try {
 # Delete Existing zip files
 if(Test-Path -Path "C:\TempDIr\") {
 	Remove-Item "C:\TempDIr\*" -Force
 }
+}
+catch
+{
 New-Item -ItemType directory -Path "C:\TempDIr"
+}
 
 function upload_download($version)
 {
