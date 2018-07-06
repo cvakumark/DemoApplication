@@ -10,9 +10,9 @@ ScriptNames:
 
 The Above script will help us to upload the packages to artifactory. 
 
-./UploadArtifact.ps1 -version <releaseversion>
+./UploadArtifact.ps1 -version #releaseversion
 
-./Web_Deploy.ps1 -version <releaseversion> -name <virtualdirectory>
+./Web_Deploy.ps1 -version #releaseversion -name #virtualdirectory
 
 The above script will help us to achive below tasks.
 
