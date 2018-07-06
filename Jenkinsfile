@@ -15,7 +15,7 @@ node {
         bat 'dotnet publish --configuration Release --output bin/output'
     }
     stage ('upload to Artifactory') {
-        zip archive: true, dir: 'bin/output/', glob: '', zipFile: 'DemoApplication_$BUILD_ID'
+        zip archive: true, dir: 'DemoApplication/bin/output/', glob: '', zipFile: 'DemoApplication_$BUILD_ID'
 	
 
     }
