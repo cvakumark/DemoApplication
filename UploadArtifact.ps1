@@ -1,5 +1,5 @@
 param(
-[string] $version=45
+[string] $version=49
 )
 
 # uploade package from artifactory
@@ -15,4 +15,4 @@ Invoke-WebRequest -Uri $URI -InFile $SOURCE -Method Put -Credential $CREDS -UseB
 
 }
 
-UploadArtifacts  -version 46
+UploadArtifacts  -version 49
