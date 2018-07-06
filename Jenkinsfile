@@ -19,7 +19,7 @@ node {
         zip dir: 'DemoApplication/bin/output', glob: '', zipFile: "${env.WORKSPACE}/DemoApplication.${env.BUILD_ID}.zip"
 	}
 	stage ('Upload Artifacts') {
-		powershell """ echo ${env.WORKSPACE}"""
+		powershell """ Write-Host ${env.WORKSPACE}"""
         powershell returnStatus: true, script: ".\\UploadArtifact.ps1 -version ${env.BUILD_ID} -workspace ${env.WORKSPACE}"
 	}
 		
