@@ -9,8 +9,9 @@ ScriptNames:
 #UploadArtifact.ps1
 
 The Above script will help to upload packages to artifactory and we should keep package in the current directory and should pass version number like below
-./UploadArtifact.ps1 -version <somenumber>
-#Web_Deploy.ps1
+./UploadArtifact.ps1 -version <releaseversion>
+
+#Web_Deploy.ps1 -version <releaseversion> -name <virtualdirectory>
 
 1. Download Artifact from Artifactory based on version to TempDir
 2. Install IIS adminstration modules
@@ -37,6 +38,8 @@ ScriptNames:
 To achive task two, 
 
 #Jenkinsfile
+
+I have created  pipeline job in jenkins and checked in to github and called the Jenkinsfile file from SCM.
 
 1. Which downloads source code from GitHub
 2. Download dependents from nuget repository.
