@@ -16,6 +16,8 @@ node {
     }
     stage ('upload to Artifactory') {
         zip dir: 'DemoApplication/bin/output', glob: '', zipFile: "${env.WORKSPACE}/DemoApplication.${env.BUILD_ID}.zip"
+		powershell "UploadArtifact.ps1 -version ${env.BUILDID}"
+
 	
 
     }
