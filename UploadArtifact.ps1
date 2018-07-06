@@ -3,7 +3,7 @@ param(
 )
 
 # uploade package from artifactory
-function UploadArtifacts($version, $workspace) {
+function UploadArtifacts($version) {
 #cd $env:workspace
 $URI = New-Object System.Uri("http://localhost:8081/artifactory/DemoApplication/DemoApplication_$version.zip")  
 $SOURCE = "./DemoApplication_$version.zip"
