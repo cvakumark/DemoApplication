@@ -1,5 +1,5 @@
 param(
-[string] $version=30
+[string] $version=45
 )
 
 # uploade package from artifactory
