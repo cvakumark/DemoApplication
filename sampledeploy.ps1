@@ -76,4 +76,4 @@ if($site -eq $null)
  New-WebApplication -Site $name -Name $name -PhysicalPath "C:\inetpub\wwwroot\Admin" -ApplicationPool $name
 }
  
-UnZipMe -zipfilename "C:\TempDIr\DemoApplication_16.zip" -destination "C:\inetpub\wwwroot\Admin"
+UnZipMe -zipfilename "C:\TempDIr\DemoApplication_$version1.zip" -destination "C:\inetpub\wwwroot\Admin"
