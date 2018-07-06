@@ -1,21 +1,24 @@
 param (
         [string]$version1 = $(throw "-version1 is required"),
-        [string]$PACKAGE = $(throw "-PACKAGE is required")
+        
     )
-function upload_download($artifactname, $version)
+# Delete Existing zip files
+if(Test-Path -Path "C:\TempDIr\") {
+	Remove-Item "C:\TempDIr\*" -Force
+}
+New-Item -ItemType directory -Path "C:\TempDIr"
+
+function upload_download($version)
 {
-cd $env:workspace
 $AF_USER = "admin"  
 $AF_PWD = ConvertTo-SecureString "admin123" -AsPlainText -Force  
 $CREDS = New-Object System.Management.Automation.PSCredential ($AF_USER, $AF_PWD) 
 
-$URI = New-Object System.Uri("http://localhost:8081/artifactory/Assignment/${artifactname}_$version.zip")  
-#$SOURCE = "./DemoApplication/bin/Debug/netcoreapp2.0/publish/${artifactname}_$version.zip"
+$URI = New-Object System.Uri("http://localhost:8081/artifactory/Assignment/DemoApplication_$version.zip")  
 
-
-Invoke-RestMethod -Method GET -Uri $URI -OutFile "C:\ELK_Stack\${artifactname}_$version.zip" -Credential $CREDS -UseBasicParsing
+Invoke-RestMethod -Method GET -Uri $URI -OutFile "C:\TempDir\DemoApplication_$version.zip" -Credential $CREDS -UseBasicParsing
 }
-upload_download -artifactname "$PACKAGE" -version "$version1"
+upload_download -version "$version1"
 
 function UnZipMe($zipfilename, $destination)
 {
