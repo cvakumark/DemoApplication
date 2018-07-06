@@ -15,4 +15,4 @@ Invoke-WebRequest -Uri $URI -InFile $SOURCE -Method Put -Credential $CREDS -UseB
 
 }
 
-UploadArtifacts  -version "$version"
+UploadArtifacts  -version 46
