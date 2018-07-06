@@ -7,7 +7,7 @@ param(
 function UploadArtifacts($version, $workspace) {
 #cd $env:workspace
 $URI = New-Object System.Uri("http://localhost:8081/artifactory/DemoApplication/DemoApplication_$version.zip")  
-$SOURCE = "$workspace/DemoApplication_$version.zip
+$SOURCE = "$workspace"
 DemoApplication_$version.zip"
 $AF_USER = "admin"  
 $AF_PWD = ConvertTo-SecureString "admin123" -AsPlainText -Force  
