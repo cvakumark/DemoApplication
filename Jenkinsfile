@@ -1,5 +1,5 @@
 node {
-    stage ('Get Latest Code1') {
+    stage ('Get Latest Code') {
         git branch: 'master', url: 'https://github.com/cvakumark/DemoApplication.git'
     }
     
