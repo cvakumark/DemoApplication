@@ -1,10 +1,9 @@
 param(
-[string] $version=52
+[string]$version = $(throw "-version is required")
 )
 
 # uploade package from artifactory
 function UploadArtifacts($version) {
-#cd $env:workspace
 $URI = New-Object System.Uri("http://localhost:8081/artifactory/DemoApplication/DemoApplication_$version.zip")  
 $SOURCE = "./DemoApplication_$version.zip"
 $AF_USER = "admin"  

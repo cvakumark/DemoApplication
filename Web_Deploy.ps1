@@ -34,7 +34,7 @@ function ExtractArtifact($zipfilename, $destination)
  
 $destinationFolder.CopyHere($zipPackage.Items(),20)
 }
-Import-Module webAdminstration
+#Import-Module webAdminstration
 # Install IIS if required
 Import-Module Servermanager
 #Enable DotNet Framework 4
